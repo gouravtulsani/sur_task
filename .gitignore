@@ -1,0 +1,8 @@
+bin/
+lib/
+share/
+*.sqlite3
+migrations/
+*.pyc
+lib64
+pyvenv.cfg
