@@ -27,10 +27,9 @@ def raw_data(request):
 
     if not data:
         print('db lookup..')
-        data = AdultData.objects.values_list(*keys)[:10]
+        data = AdultData.objects.values(*keys)
     
     cache.set(cache_key, data, cache_time)
 
     resp = {'result': list(data)}
-    resp['keys'] = keys
     return JsonResponse(resp)
